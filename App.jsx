@@ -6,7 +6,7 @@ import ProductoDetalle from "./pages/DetalleProdutos";
 import Pagar from "./pages/Pagar";
 import RutaProtegida from "./pages/RutaProtegida";
 import IniciarSesion from "./pages/IniciarSesion";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import { CartProvider } from "./context/CartContext";
 import { ProductsProvider } from "./context/ProductsContext";
@@ -25,6 +25,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
+    <Router>
     <AuthProvider>
       <CartProvider>
         <ProductsProvider>
@@ -80,5 +81,6 @@ function App() {
         </ProductsProvider>
       </CartProvider>
     </AuthProvider>
+    </Router>
   );
 } export default App;
